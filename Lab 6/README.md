@@ -152,7 +152,6 @@ You may ask "but what if I missed class?" Am I not admitted into the collective 
 
 Of course not! You can go to [https://one-true-colornet.glitch.me/](https://one-true-colornet.glitch.me/) and become one with the ColorNet on the inter-webs. Glitch is a great tool for prototyping sites, interfaces and web-apps that's worth taking some time to get familiar with if you have a chance. Its not super pertinent for the class but good to know either way. 
 
-**\*\*\*Can you set up the script that can read the color anyone else publish and display it on your screen?\*\*\***
 
 
 ### Part E
@@ -160,11 +159,15 @@ Of course not! You can go to [https://one-true-colornet.glitch.me/](https://one-
 
 Find at least one class (more are okay) partner, and design a distributed application together based on the exercise we asked you to do in this lab.
 
-1. We are creating a digitized Marco Polo game where one person is trying to find the others but is blindfolded. Instead, they must speak to the device and ask "Marco". The device on the others will say "Polo" and then the seeker will be told how far the closest person is. When the seeker touches the hider, the speaker will win. This device could be used to program multiple games and digitize the experience so that the rules are enforced automatically.
+1. We are creating a digitized Marco Polo game where one person is trying to find the others but is blindfolded. Instead, they must speak to the device and ask "Marco". The device on the others will say "Polo" and then the seeker will be told how far the closest person is. When the seeker touches the hider, the speaker will win. This device could be used to program multiple games and digitize the experience so that the rules are enforced automatically and setup will be done without much effort.
 
 Marco: Seeker
 
 Polo: Hiders
+
+
+![IMG_0122](https://user-images.githubusercontent.com/112091020/200416460-362c68fd-87fe-412f-abe7-2f1b58363b40.jpg)
+
 
 2. We will be using 3 sensors: the webcam, the proximity sensor, and the capactive touch sensor. The webcam will be capturing input when the seeker asks for where the hiders are. It will have to correctly capture when the seeker says "Marco". It will then have to use the proximity sensor to calculate how far the closest user is and use the speaker on the webcam to state how far they are. Lastly, it will end the game when the seeker touches a hider.
 
@@ -172,14 +175,6 @@ https://drive.google.com/file/d/13cxp90EBnOah35ULxEcjy60FtVKCCovh/view?usp=share
 
 https://drive.google.com/file/d/1KZjAk3YIW8_F6TN2pxNzOP_O5KNP35nJ/view?usp=share_link
 
-**\*\*\*1. Explain your design\*\*\*** For example, if you made a remote controlled banana piano, explain why anyone would want such a thing.
+We demoed two of the scenarios: the interaction of the Seeker who says "Marco" to their machine and the interaction once the Seeker finds and touches one of the hiders. When the Seeker says "Marco", the proximity sensor calculates the closest Hider and tells the Seeker how far they are. The Hider's sensors will subsequently say "Polo" in response. In the second scenario, the Seeker finds and touches a Hider which ends the game.
 
-**\*\*\*2. Diagram the architecture of the system.\*\*\*** Be clear to document where input, output and computation occur, and label all parts and connections. For example, where is the banana, who is the banana player, where does the sound get played, and who is listening to the banana music?
-
-**\*\*\*3. Build a working prototype of the system.\*\*\*** Do think about the user interface: if someone encountered these bananas somewhere in the wild, would they know how to interact with them? Should they know what to expect?
-
-**\*\*\*4. Document the working prototype in use.\*\*\*** It may be helpful to record a Zoom session where you should the input in one location clearly causing response in another location.
-
-<!--**\*\*\*5. BONUS (Wendy didn't approve this so you should probably ignore it)\*\*\*** get the whole class to run your code and make your distributed system BIGGER.-->
-
-
+One limitation of our scenario is that the proximity sensors do not sense where another sensor is, but instead senses how far an object is in a particular direction. Unfortunately, this is not how the game should actually work, but the sensor we have does not work in that manner. In our demo, we used a "Wizard of Oz" demo to showcase how it should work and as a proof concept but the next steps would be to create it the way we intended it to work.
