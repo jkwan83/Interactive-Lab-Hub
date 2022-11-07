@@ -161,6 +161,10 @@ Find at least one class (more are okay) partner, and design a distributed applic
 
 1. We are creating a digitized Marco Polo game where one person is trying to find the others but is blindfolded. Instead, they must speak to the device and ask "Marco". The device on the others will say "Polo" and then the seeker will be told how far the closest person is. When the seeker touches the hider, the speaker will win. This device could be used to program multiple games and digitize the experience so that the rules are enforced automatically and setup will be done without much effort.
 
+![313494129_498914695518408_1976660354301164494_n](https://user-images.githubusercontent.com/112091020/200429778-3d2d2703-1536-4e3f-a48a-406445c7b075.jpg)
+
+The picture above shows what sensors the device uses. Number 2 details how each are used to play the game and the mechanisms by which they work.
+
 Marco: Seeker
 
 Polo: Hiders
@@ -175,6 +179,6 @@ https://drive.google.com/file/d/13cxp90EBnOah35ULxEcjy60FtVKCCovh/view?usp=share
 
 https://drive.google.com/file/d/1KZjAk3YIW8_F6TN2pxNzOP_O5KNP35nJ/view?usp=share_link
 
-We demoed two of the scenarios: the interaction of the Seeker who says "Marco" to their machine and the interaction once the Seeker finds and touches one of the hiders. When the Seeker says "Marco", the proximity sensor calculates the closest Hider and tells the Seeker how far they are. The Hider's sensors will subsequently say "Polo" in response. In the second scenario, the Seeker finds and touches a Hider which ends the game.
+3. We demoed two of the scenarios: the interaction of the Seeker who says "Marco" to their machine and the interaction once the Seeker finds and touches one of the hiders. When the Seeker says "Marco", the proximity sensor calculates the closest Hider and tells the Seeker how far they are. The Hider's sensors will subsequently say "Polo" in response. In the second scenario, the Seeker finds and touches a Hider which ends the game.
 
-One limitation of our scenario is that the proximity sensors do not sense where another sensor is, but instead senses how far an object is in a particular direction. Unfortunately, this is not how the game should actually work, but the sensor we have does not work in that manner. In our demo, we used a "Wizard of Oz" demo to showcase how it should work and as a proof concept but the next steps would be to create it the way we intended it to work.
+4. One limitation of our scenario is that the proximity sensors do not sense where another sensor is, but instead senses how far an object is in a particular direction. Unfortunately, this is not how the game should actually work, but the sensor we have does not work in that manner. In our demo, we used a "Wizard of Oz" demo to showcase how it should work and as a proof concept but the next steps would be to create it the way we intended it to work.
