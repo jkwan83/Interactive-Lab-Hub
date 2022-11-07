@@ -93,8 +93,9 @@ Once connected, you should be able to see all the messages under the IDD topic. 
 
 <img width="890" alt="Screen Shot 2022-10-30 at 10 47 52 AM" src="https://user-images.githubusercontent.com/24699361/198885135-a1d38d17-a78f-4bb2-91c7-17d014c3a0bd.png">
 
-
-**\*\*\*Consider how you might use this messaging system on interactive devices, and draw/write down 5 ideas here.\*\*\***
+1. An announcement center. Anyone can post an announcement that they wish to send to a group of people and it will get sent to everyone's machine.
+2. An auction. A seller can post something they wish to put up for auction and people can post their bids. Other people can see other's bids and change theirs accordingly.
+3. Sharing 
 
 ### Part C
 ### Streaming a Sensor
@@ -166,6 +167,10 @@ Marco: Seeker
 Polo: Hiders
 
 2. We will be using 3 sensors: the webcam, the proximity sensor, and the capactive touch sensor. The webcam will be capturing input when the seeker asks for where the hiders are. It will have to correctly capture when the seeker says "Marco". It will then have to use the proximity sensor to calculate how far the closest user is and use the speaker on the webcam to state how far they are. Lastly, it will end the game when the seeker touches a hider.
+
+https://drive.google.com/file/d/13cxp90EBnOah35ULxEcjy60FtVKCCovh/view?usp=share_link
+
+https://drive.google.com/file/d/1KZjAk3YIW8_F6TN2pxNzOP_O5KNP35nJ/view?usp=share_link
 
 **\*\*\*1. Explain your design\*\*\*** For example, if you made a remote controlled banana piano, explain why anyone would want such a thing.
 
