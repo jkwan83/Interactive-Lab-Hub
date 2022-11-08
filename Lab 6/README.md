@@ -95,7 +95,9 @@ Once connected, you should be able to see all the messages under the IDD topic. 
 
 1. An announcement center. Anyone can post an announcement that they wish to send to a group of people and it will get sent to everyone's machine.
 2. An auction. A seller can post something they wish to put up for auction and people can post their bids. Other people can see other's bids and change theirs accordingly.
-3. Sharing 
+3. Creating group chats that are separate from a larger chat. You can make your own group server and share that code and password with certain people so no one else can join it.
+4. Create communities.  You can make groups that are interested in a certain topic where people who join that group have the code and password with the purpose of discussing that topic.
+5. Create a private chat room with your significant other. You can create a room and just share it with one other person so no one else can join.
 
 ### Part C
 ### Streaming a Sensor
