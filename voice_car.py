@@ -5,12 +5,13 @@ import wave
 import json
 import RPi.GPIO as GPIO          
 from time import sleep
+import subprocess
 
 in1 = 5 #change me to actual GPIO physical pin number
 in2 = 6 #change me to actual GPIO physical pin number
 
-in3 = 20 #change me to actual GPIO physical pin number
-in4 = 21 #change me to actual GPIO physical pin number
+in3 = 16 #change me to actual GPIO physical pin number
+in4 = 20 #change me to actual GPIO physical pin number
 
 #Set the intended pins as inputs/outputs for the GPIO
 GPIO.setmode(GPIO.BCM)
@@ -40,56 +41,59 @@ if wf.getnchannels() != 1 or wf.getsampwidth() != 2 or wf.getcomptype() != "NONE
 
 model = Model("model")
 # You can also specify the possible word list
-rec = KaldiRecognizer(model, wf.getframerate(), '["front back left right"]')
+rec = KaldiRecognizer(model, wf.getframerate(), '["sleep", "go", "back", "left", "right"]')
                       
 while True:
-    data = wf.readframes(1000)
+    data = wf.readframes(3000)
     if len(data) == 0:
         break
     if rec.AcceptWaveform(data):
         print("success")
         
-test = rec.Result()
-voice = test[14:-3]
-print(voice)
+    test = rec.Result()
+    voice = test[14:-3]
+    print(test)
+    print(voice)
 
-if voice == "front":
-    print("recognize")
-    GPIO.output(in1,GPIO.HIGH)
-    GPIO.output(in2,GPIO.LOW)
-    GPIO.output(in3,GPIO.LOW)
-    GPIO.output(in4,GPIO.HIGH)
-    sleep(5)
+    if voice == "go":
+        print("go")
+        GPIO.output(in1,GPIO.HIGH)
+        GPIO.output(in2,GPIO.LOW)
+        GPIO.output(in3,GPIO.LOW)
+        GPIO.output(in4,GPIO.HIGH)
+        sleep(5)
 
-if voice == "back":
-    print("recognize")
-    sleep(2)
-    GPIO.output(in1,GPIO.LOW)
-    GPIO.output(in2,GPIO.HIGH)
-    GPIO.output(in3,GPIO.HIGH)
-    GPIO.output(in4,GPIO.LOW)
-    sleep(5)
+    elif voice == "back":
+        print("backward")
+        GPIO.output(in1,GPIO.LOW)
+        GPIO.output(in2,GPIO.HIGH)
+        GPIO.output(in3,GPIO.HIGH)
+        GPIO.output(in4,GPIO.LOW)
+        sleep(5)
 
-elif voice == "left":
-    GPIO.output(in1,GPIO.HIGH)
-    GPIO.output(in2,GPIO.LOW)
-    GPIO.output(in3,GPIO.HIGH)
-    GPIO.output(in4,GPIO.LOW)
-    #sleep(3)
+    elif voice == "left":
+        print("left turn")
+        GPIO.output(in1,GPIO.HIGH)
+        GPIO.output(in2,GPIO.LOW)
+        GPIO.output(in3,GPIO.HIGH)
+        GPIO.output(in4,GPIO.LOW)
+        sleep(3)
 
-elif voice == "right":
-    print("recognize")
-    GPIO.output(in1,GPIO.LOW)
-    GPIO.output(in2,GPIO.HIGH)
-    GPIO.output(in3,GPIO.LOW)
-    GPIO.output(in4,GPIO.HIGH)
-    sleep(3)
-
-else:
-    print("dont")
-    GPIO.output(in1,GPIO.LOW)
-    GPIO.output(in2,GPIO.LOW)
-    GPIO.output(in3,GPIO.LOW)
-    GPIO.output(in4,GPIO.LOW)
+    elif voice == "right":
+        print("right turn")
+        GPIO.output(in1,GPIO.LOW)
+        GPIO.output(in2,GPIO.HIGH)
+        GPIO.output(in3,GPIO.LOW)
+        GPIO.output(in4,GPIO.HIGH)
+        sleep(3)
+    elif voice == "sleep":
+        print("dont")
+        GPIO.output(in1,GPIO.LOW)
+        GPIO.output(in2,GPIO.LOW)
+        GPIO.output(in3,GPIO.LOW)
+        GPIO.output(in4,GPIO.LOW)
+        exit()
     
-print("finish")
+print("done")
+print("Say your next command")
+#subprocess.call(['sh', './vosk_demo_mic.sh']) 
