@@ -175,7 +175,10 @@ Polo: Hiders
 ![IMG_0122](https://user-images.githubusercontent.com/112091020/200416460-362c68fd-87fe-412f-abe7-2f1b58363b40.jpg)
 
 
-2. We will be using 3 sensors: the webcam, the proximity sensor, and the capactive touch sensor. The webcam will be capturing input when the seeker asks for where the hiders are. It will have to correctly capture when the seeker says "Marco". It will then have to use the proximity sensor to calculate how far the closest user is and use the speaker on the webcam to state how far they are. Lastly, it will end the game when the seeker touches a hider.
+2. We will be using 3 sensors: the webcam, the proximity sensor, and the capactive touch sensor. The webcam will be capturing input when the seeker asks for where the hiders are. It will have to correctly capture when the seeker says "Marco". It will then have to use the proximity sensor to calculate how far the closest user is and use the webcam to state how far they are. Lastly, it will end the game when the seeker touches a hider.
+
+Marco: seeker
+Polo: hiders
 
 https://drive.google.com/file/d/13cxp90EBnOah35ULxEcjy60FtVKCCovh/view?usp=share_link
 
